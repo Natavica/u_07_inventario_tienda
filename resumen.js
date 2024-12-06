@@ -12,3 +12,23 @@ const products = [
 ];
 
 
+function countProductsByCategory(products) {
+    const categorySummary = {};
+
+    for (const product of products) {
+        const category = product.category;
+
+        // Si la categoría no existe en el objeto, inicialízala en 0
+        if (!categorySummary[category]) {
+            categorySummary[category] = 0;
+        }
+
+        // Incrementa el conteo para la categoría actual
+        categorySummary[category]++;
+    }
+
+    return categorySummary;
+}
+
+const summary = countProductsByCategory(products);
+console.log(summary);
